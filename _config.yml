@@ -16,17 +16,12 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rerumnovarum.github.io" # the base hostname & protocol for your site
 github_username:  RerumNovarum
 
-
-exclude: ["pr/", "de/", "pr.exam.notes/", "de.exam.notes/"]
+exclude: ["pr/", "de/"]
 
 collections:
   pr:
         output: true
   de:
-        output: true
-  de_exam:
-        output: true
-  pr_exam:
         output: true
 
 # Build settings
