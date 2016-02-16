@@ -130,7 +130,7 @@ if __name__ == '__main__':
         elif os.path.isdir(src):
             outdirabs = os.path.join('out', virtdir)
             if not os.path.isdir(outdirabs): os.mkdir(outdirabs)
-            for name in os.listdir(src):
+            for name in sorted(os.listdir(src)):
                 if name[0] == '.' or name.startswith('__'): continue
                 path = os.path.join(src, name)
                 if os.path.isfile(path):
