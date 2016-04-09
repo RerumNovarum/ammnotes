@@ -97,9 +97,9 @@ $$\W(t) = \W(t_0) \exp(\int_{t_0}^t \Tr A(s) \dd s)$$
 Наряду с векторными уравнениями $\dot x = A x$
 рассмотрим матричные уравнения:
 $$\begin{aligned}
-\dot X = A X \\
-X : (q_1, q_2) \mapsto \RR^{n\times n} \\
-A : (q_1, q_2) \mapsto \RR^{n\times n}
+& \dot X = A X \\
+& X : (q_1, q_2) \mapsto \RR^{n\times n} \\
+& A : (q_1, q_2) \mapsto \RR^{n\times n}
 \end{aligned}$$
 
 ## Связь между векторными и матричными Д.У. ##
@@ -147,3 +147,5 @@ $$
   \dot \Psi = \dot \Phi C = A \Phi C = A \Psi
   \end{aligned}$$
   \end{proof}
+
+* * *
