@@ -14,8 +14,6 @@ baseurl: "/ammnotes" # the subpath of your site, e.g. /blog
 url: "https://rerumnovarum.github.io" # the base hostname & protocol for your site
 github_username:  RerumNovarum
 
-exclude: ["pr/", "de/"]
-
 collections:
   pr:
         output: true
