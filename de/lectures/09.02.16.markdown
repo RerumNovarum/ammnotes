@@ -46,7 +46,7 @@ $$\begin{aligned}
 & \begin{aligned}
 & \mathbf x &&: (q_1, q_2) && \mapsto \RR^n \\
 & \mathbf b &&: (q_1, q_2) && \mapsto \RR^n \\
-& A &&: (q_1, q_2) && \mapsto \RR^n\times\RR^n
+& A &&: (q_1, q_2) && \mapsto \RR^{n\times n}
 \end{aligned}
 \end{aligned}$$
 
