@@ -1,0 +1,9 @@
+---
+layout: post
+---
+
+All this crap is just an experiment intended to try github-pages and jekyll.
+These lectures must re-typed and re-styled
+
+* [Diff. eq'ns](/ammnotes/de)
+* [Probablity th](/ammnotes/pr)
