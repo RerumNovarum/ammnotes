@@ -1,8 +1,8 @@
 Конспекты к экзамену по теории вероятностей (ВГУ, ПМИ, 3 семестр)
 =================================================================
 
-*  [Список вопросов](sources/questions.djvu)
-*  [Опорные материалы](sources/)
+*  [Список вопросов](third_party/questions.djvu)
+*  [Опорные материалы](third_party/)
 *  [Билеты](questions/)
 *  [КИМ'ы](cards/)
 *  [Лоэв](http://gen.lib.rus.ec/search.php?req=%D0%BB%D0%BE%D1%8D%D0%B2&lg_topic=libgen&open=0&view=detailed&phrase=1&column=def)
