@@ -1,0 +1,69 @@
+\subsection{События, Классификация событий, Действия над
+событиями}\label{ux441ux43eux431ux44bux442ux438ux44f-ux43aux43bux430ux441ux441ux438ux444ux438ux43aux430ux446ux438ux44f-ux441ux43eux431ux44bux442ux438ux439-ux434ux435ux439ux441ux442ux432ux438ux44f-ux43dux430ux434-ux441ux43eux431ux44bux442ux438ux44fux43cux438}
+
+Пусть дано некоторое пространство \(\Omega\). Множество всевозможных
+подмножеств \(\Omega\) будем обозначать \(S(\Omega)\)
+
+\subsubsection{\texorpdfstring{Def.
+(\(\sigma\)-алгебра)}{Def. (\textbackslash{}sigma-алгебра)}}\label{def.-sigma-ux430ux43bux433ux435ux431ux440ux430}
+
+\(\sigma\)-алгеброй пространства \(\Omega\), называется класс
+\(\SigmaField\) множеств \(A\subset\Omega\), такой что
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  для любого не более чем счётного числа множеств
+  \(A_{j}\in\SigmaField\) имеет место \[\begin{aligned}
+  & \bigcup_{j\in J} A_{j} \in \SigmaField \\
+  & \bigcap_{j\in J} A_{j} \in \SigmaField
+  \end{aligned}\]
+\item
+  \(\forall A\in\SigmaField\)\quad
+
+  \(A^\complement \in \SigmaField\)
+\end{enumerate}
+
+\paragraph{Следствия из
+определения}\label{ux441ux43bux435ux434ux441ux442ux432ux438ux44f-ux438ux437-ux43eux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
+
+Полагая, что объединение по пустому множеству индексов есть пустое
+множество, а пересечение по пустому множеству индексов есть всё
+пространство, получаем
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+
+\item
+  \(\emptyset\in\SigmaField\)
+\item
+  \(\Omega\in\SigmaField\)
+\end{enumerate}
+
+\subsubsection{Def.
+(Событие)}\label{def.-ux441ux43eux431ux44bux442ux438ux435}
+
+Множества \(A\) из класса \(\SigmaField\) называются \emph{измеримыми
+множествами}, или \emph{событиями}
+
+\subsubsection{Def. (Элементарное
+событие)}\label{def.-ux44dux43bux435ux43cux435ux43dux442ux430ux440ux43dux43eux435-ux441ux43eux431ux44bux442ux438ux435}
+
+Элементы \(\omega\) пространства \(\Omega\) называются
+\emph{элементарными событиями}
+
+\subsubsection{Def. (Невозможное
+событие)}\label{def.-ux43dux435ux432ux43eux437ux43cux43eux436ux43dux43eux435-ux441ux43eux431ux44bux442ux438ux435}
+
+Пустое множество \(\emptyset\) называется \emph{невозможным событием}
+
+\subsubsection{Def. (Достоверное
+событие)}\label{def.-ux434ux43eux441ux442ux43eux432ux435ux440ux43dux43eux435-ux441ux43eux431ux44bux442ux438ux435}
+
+Всё пространство \(\Omega\) называется \emph{достоверным событием}
+
+\subsubsection{Def. (Несовместные
+события)}\label{def.-ux43dux435ux441ux43eux432ux43cux435ux441ux442ux43dux44bux435-ux441ux43eux431ux44bux442ux438ux44f}
+
+Два события \(A\) и \(B\) называются \emph{несовместными}, если
+\(AB = \emptyset\)

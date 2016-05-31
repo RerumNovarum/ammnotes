@@ -1,0 +1,58 @@
+\subsection{Функции распределения функций случайных
+величин}\label{ux444ux443ux43dux43aux446ux438ux438-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f-ux444ux443ux43dux43aux446ux438ux439-ux441ux43bux443ux447ux430ux439ux43dux44bux445-ux432ux435ux43bux438ux447ux438ux43d}
+
+\subsubsection{Def. (Борелевская
+функция)}\label{def.-ux431ux43eux440ux435ux43bux435ux432ux441ux43aux430ux44f-ux444ux443ux43dux43aux446ux438ux44f}
+
+Борелевской называется измеримая функция вида
+\(g : (\RR^n, \BB^n)\mapsto (\RR^m,\BB^m)\). То есть функция,
+относительно которой прообразами борелевских множеств являются
+борелевские множества.
+
+\subsubsection{Def. (Борелевская фунция от случайной
+величины)}\label{def.-ux431ux43eux440ux435ux43bux435ux432ux441ux43aux430ux44f-ux444ux443ux43dux446ux438ux44f-ux43eux442-ux441ux43bux443ux447ux430ux439ux43dux43eux439-ux432ux435ux43bux438ux447ux438ux43dux44b}
+
+Пусть \(X = (X_1, \ldots, X_n)\) --- r.v. на \((\Omega, \FF, \pr)\).
+\({\Psi_j, j=\overline{1,k}}\) --- борелевские функции
+\({\Psi_j : X(\Omega)\mapsto\RR}\).
+\({\Psi = (\Psi_1, \ldots, \Psi_k)}\),
+\({\Psi : X(\Omega)\mapsto\Gamma, \quad \Gamma\subset\RR^k}\) ---
+отображение из области \(X(\Omega)\) значений r.v. \(X\) в область
+\(k\)-мерного вещественного пространства.
+
+\(Y = (Y_1, \ldots, Y_k), \quad Y_j = \Psi_j(X)\) --- случайная величина
+\(Y: \Omega\mapsto\Gamma\) (доказать: композиция борелевской ф-ии и
+случайной величины есть случайная величина).
+
+Пусть \(F_X\) --- функция распределения r.v. \(X\).
+
+\subsubsection{\texorpdfstring{Задача: найти функцию \(F_Y\)
+распределения
+\(Y\)}{Задача: найти функцию F\_Y распределения Y}}\label{ux437ux430ux434ux430ux447ux430-ux43dux430ux439ux442ux438-ux444ux443ux43dux43aux446ux438ux44e-fux5fy-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f-y}
+
+\[F_Y(y) = \pr \{Y(\omega) \leq y\} = \pr \{ \Psi(X(\omega)) \leq y\}\]
+
+Будем искать функцию распределения \(F_Y\) по заданной плотности
+\(f_X\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Пусть \(k=n=1\).
+
+  \(X\) --- непрерывная r.v., \(f_X\) --- плотность. \(Y = \Psi(X)\).
+
+  Найдём \(F_Y\):
+  \(F_Y(y) = \pr\{\Psi(X)\leq y\} = \int_{\{x: \psi(x) \leq y\}} f_X(x) \dd x\)
+\item
+  \(1 \leq k \leq n\)
+
+  \(X = (X_1, \ldots, X_n)\) \(f_X : X(\Omega)\mapsto\RR_+\) ---
+  плотность.
+
+  \(Y = (Y_1, \ldots, Y_k) = (\Psi_1(X), \ldots, \Psi_k(X)\) --- r.v.
+
+  \(F_Y(y) = \pr(\Psi(X)\leq y) = \idotsint_{\{ x: \Psi(x) \leq y \}} f_X(x) \dd x\),
+  где
+  \({x=(x_1, \ldots, x_n)}, {y=(y_1,\ldots,y_n)}, {\dd x = \dd x_1 \ldots \dd x_n}\)
+\end{enumerate}

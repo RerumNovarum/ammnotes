@@ -1,0 +1,43 @@
+\subsection{Плотность вероятности суммы, произведения и
+частного}\label{ux43fux43bux43eux442ux43dux43eux441ux442ux44c-ux432ux435ux440ux43eux44fux442ux43dux43eux441ux442ux438-ux441ux443ux43cux43cux44b-ux43fux440ux43eux438ux437ux432ux435ux434ux435ux43dux438ux44f-ux438-ux447ux430ux441ux442ux43dux43eux433ux43e}
+
+\subsubsection{Плотность
+суммы}\label{ux43fux43bux43eux442ux43dux43eux441ux442ux44c-ux441ux443ux43cux43cux44b}
+
+Пусть \(X = (X_1, X_2)\), \(Y = X_1 + X_2\), \(f_X\) --- плотность.
+Необходимо найти \(f_Y\).
+
+Введём \(Y_2 = X_2\) и вектор \(Y^\star = (Y, Y_2)\).
+\[\left\{\begin{aligned}
+& X_1 &=& Y - Y_2 \\
+& X_2 &=& Y_2
+\end{aligned}\right.\]
+
+\[ J(y^\star) =
+\begin{vmatrix}
+& 1 & -1 \\
+& 0 & 1
+\end{vmatrix} = 1\]
+
+\[f_{Y^\star}(y) = f_X(\Psi(y)) |J(y)| = f_X (y - y_2, y_2) |1|\]
+\[f_Y(y) = \int_{-\infty}^{+\infty} f_X(y - y_2, y_2) \dd y_2\]
+
+\subsubsection{Плотность
+произведения}\label{ux43fux43bux43eux442ux43dux43eux441ux442ux44c-ux43fux440ux43eux438ux437ux432ux435ux434ux435ux43dux438ux44f}
+
+Пусть \(X=(X_1,X_2)\), \(Y = X_1 X_2\).
+\(Y^\star = (Y_1, Y_2) := (Y, X_2)\).
+
+\[\left\{\begin{aligned}
+& X_1 = \frac{Y}{Y_2}\\
+& X_2 = Y_2
+\end{aligned}\right.\]
+
+\[J(y^\star) =
+\begin{vmatrix}
+& \frac{1}{y_2} & y_1 \frac{1}{y_2^2} \\
+& 0             & 1
+\end{vmatrix} = \frac{1}{y_2}\]
+
+\[f_Y(y) = - \int_{-\infty}^0 f_X(\frac{y}{y_2}, y_2) \left|\frac{1}{y_2}\right| \dd y_2
+           + \int_0^{+\infty} f_X(\frac{y}{y_2}, y_2) \left|\frac{1}{y_2}\right| \dd y_2\]

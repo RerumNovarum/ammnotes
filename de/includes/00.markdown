@@ -1,8 +1,0 @@
-\providecommand{\RR}{\mathbb R}
-\providecommand{\CC}{\mathbb C}
-\providecommand{\KK}{\mathbb K}
-\providecommand{\W}{\mathbb W}
-\providecommand{\Sp}{\mathrm{Sp}}
-\providecommand{\Tr}{\mathrm{Tr}}
-\providecommand{\dd}{\mathrm{d}}
-\renewcommand{\dot}[1]{\overset{\textbf .}{#1}}

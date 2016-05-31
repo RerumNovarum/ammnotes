@@ -1,0 +1,68 @@
+\subsection{Математическое ожидание случайной величины и функции
+случайной
+величины}\label{ux43cux430ux442ux435ux43cux430ux442ux438ux447ux435ux441ux43aux43eux435-ux43eux436ux438ux434ux430ux43dux438ux435-ux441ux43bux443ux447ux430ux439ux43dux43eux439-ux432ux435ux43bux438ux447ux438ux43dux44b-ux438-ux444ux443ux43dux43aux446ux438ux438-ux441ux43bux443ux447ux430ux439ux43dux43eux439-ux432ux435ux43bux438ux447ux438ux43dux44b}
+
+\subsubsection{Def. (Интеграл простой неотрицательной
+функции)}\label{def.-ux438ux43dux442ux435ux433ux440ux430ux43b-ux43fux440ux43eux441ux442ux43eux439-ux43dux435ux43eux442ux440ux438ux446ux430ux442ux435ux43bux44cux43dux43eux439-ux444ux443ux43dux43aux446ux438ux438}
+
+\emph{Интеграл простой неотрицательной функции
+\(X = \sum_{j=1}^m x_j I_{A_j}\) на \(\Omega\)} есть величина
+\[ \int_\Omega X\dmu = \sum_{j=1}^m x_j \mu A_j\]
+
+\subsubsection{Def. (Интеграл неотрицательной измеримой
+функции)}\label{def.-ux438ux43dux442ux435ux433ux440ux430ux43b-ux43dux435ux43eux442ux440ux438ux446ux430ux442ux435ux43bux44cux43dux43eux439-ux438ux437ux43cux435ux440ux438ux43cux43eux439-ux444ux443ux43dux43aux446ux438ux438}
+
+Неотрицательная измеримая функция представима в виде \(X = \lim_n X_n\)
+предела неубывающей сходящейся последовательности простых функций:
+\(X_n \uparrow X\). Её интеграл по \(\Omega\) определим как
+\[ \int_\Omega X\dmu = \lim_n \int_\Omega X_n \dmu \]
+
+\subsubsection{Def. (Интеграл измеримой
+функции)}\label{def.-ux438ux43dux442ux435ux433ux440ux430ux43b-ux438ux437ux43cux435ux440ux438ux43cux43eux439-ux444ux443ux43dux43aux446ux438ux438}
+
+Всякая измеримая функция представима в виде \(X = X^+ - X^-\). Интеграл
+по \(\Omega\) такой функции определим как
+\[ \int_\Omega X \dmu = \int_\Omega X^+ \dmu - \int_\Omega X^- \dmu \]
+
+\subsubsection{Def. (Интеграл по
+множеству)}\label{def.-ux438ux43dux442ux435ux433ux440ux430ux43b-ux43fux43e-ux43cux43dux43eux436ux435ux441ux442ux432ux443}
+
+Интеграл измеримой функции \(X\) по измеримому множеству
+\(A \in \SigmaField\) определим как
+\[ \int_A X\dmu = \int_\Omega X I_A \dmu \]
+
+\subsubsection{Def. (Интегрируемая
+функция)}\label{def.-ux438ux43dux442ux435ux433ux440ux438ux440ux443ux435ux43cux430ux44f-ux444ux443ux43dux43aux446ux438ux44f}
+
+Функция \(X\) называется \emph{интегрируемой по множеству \(A\)}, если
+\(\int_A X\dmu\) существует и конечен.
+
+\subsubsection{Свойства
+интеграла}\label{ux441ux432ux43eux439ux441ux442ux432ux430-ux438ux43dux442ux435ux433ux440ux430ux43bux430}
+
+Интеграл по множеству является линейным функционалом из пространства
+интегрируемых функций:
+\({\int_A \cdot : X \mapsto \int_\Omega X \dmu}\).
+
+Пусть \(X = \sum_{j=1}^n x_j I_{A_j}\), \(Y = \sum_{k=1}^m y_k I_{B_k}\)
+И пусть существуют и конечны \(\int_A X\), \(\int_A Y\) и
+\(\int_A X + \int_A Y\).
+
+Тогда
+
+\(\int_A \alpha X \dmu = \sum_j \alpha x_j \pr A_j = \alpha \sum_j x_j \pr A_j = \alpha \int_A X\dmu\).
+
+\(\int_A X+Y \dmu = \sum_{j,k} (x_j + y_k) I_{A_j} I_{B_k} = \sum_j x_j I_{A_j} + \sum_k y_k I_{B_k} = \int_A X\dmu + \int_A Y\dmu\)
+
+Общий случай доказывается предельным переходом. Нужно только уметь
+доказывать, что \(\forall X \exists X_n \quad {X_n \uparrow X}\) (как?).
+Тогда для неотрицательной измеримой функции монотонная
+последовательность \(\int_A X_n\dmu\) имеет предел (конечный или
+бесконечный) и нужно доказать единственность (как?).
+
+\subsubsection{Def. (Математическое
+ожидание)}\label{def.-ux43cux430ux442ux435ux43cux430ux442ux438ux447ux435ux441ux43aux43eux435-ux43eux436ux438ux434ux430ux43dux438ux435}
+
+\emph{Математическим ожиданием} случайной величины
+\(X : \Omega\mapsto\RR\) называется интеграл \(\int_\Omega X \dd\pr\) по
+\(\Omega\).

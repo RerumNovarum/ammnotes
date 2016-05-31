@@ -1,0 +1,153 @@
+\subsection{Условная вероятность. Независимость. Теорема о
+умножении}\label{ux443ux441ux43bux43eux432ux43dux430ux44f-ux432ux435ux440ux43eux44fux442ux43dux43eux441ux442ux44c.-ux43dux435ux437ux430ux432ux438ux441ux438ux43cux43eux441ux442ux44c.-ux442ux435ux43eux440ux435ux43cux430-ux43e-ux443ux43cux43dux43eux436ux435ux43dux438ux438}
+
+\subsubsection{Def. (Условная
+вероятность)}\label{def.-ux443ux441ux43bux43eux432ux43dux430ux44f-ux432ux435ux440ux43eux44fux442ux43dux43eux441ux442ux44c}
+
+\emph{Условной} вероятностью \(\pr_A B\) события \(B\) при данном
+событии \(A\) называется отношение \(\frac{\pr AB}{\pr A}\)
+
+\subsubsection{Пример}\label{ux43fux440ux438ux43cux435ux440}
+
+Например, в случае классической вероятности:
+
+\begin{itemize}
+
+\item
+  \(\pr A = \frac{N(A)} {N(\Omega)}\)
+\item
+  \(\pr AB = \frac{N(AB)}{N(\Omega)}\)
+\item
+  \(\pr_A B = \frac{N(AB)}{A}\)
+\end{itemize}
+
+\subsubsection{Свойства}\label{ux441ux432ux43eux439ux441ux442ux432ux430}
+
+\begin{itemize}
+
+\item
+  \(\pr_A A = 1\)
+\item
+  \(\pr_A \emptyset = 0\)
+\item
+  \(\pr_A \sum_j B_j = \frac{\sum_j \pr B_j}{\pr A} = \sum_j \frac{\pr B_j}{\pr A} = \sum_j \pr_A B_j\)
+\item
+  \(\pr_A \geq 0\)
+\item
+  \(\pr_A B \leq \pr_A A = 1, \forall B\), \quad так как
+  \(\forall B \quad AB\subset A\)
+\end{itemize}
+
+Отсюда следует
+
+\paragraph{Утверждение}\label{ux443ux442ux432ux435ux440ux436ux434ux435ux43dux438ux435}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+
+\item
+  Для любого события \(A\) \emph{условная вероятность при данном} A
+  является \emph{вероятностью} на вероятностном пространстве
+  \((\Omega A, \SigmaField_A)\) где
+  \(\SigmaField_A = \{ A B : B \in\SigmaField \}\). То есть
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  
+  \item
+    \(\pr_A : \SigmaField_A\mapsto [0,1]\) (неотрицательность)
+  \item
+    \(\pr_A A = 1\) (нормированность)
+  \item
+    \(\sum_j \pr_A B_j = \pr_A \sum_j B_j\) (\(\sigma\)-аддитивность)
+  \end{enumerate}
+\item
+  Любую вероятность можно считать \emph{условной вероятностью при
+  некотором событии (условии)}.
+\end{enumerate}
+
+\subsubsection{Теорема о
+умножении}\label{ux442ux435ux43eux440ux435ux43cux430-ux43e-ux443ux43cux43dux43eux436ux435ux43dux438ux438}
+
+\[ \pr AB = \pr_A B \pr A  = \pr_B A \pr B\]
+
+\[\begin{aligned}
+& \pr AB = \frac{\pr AB}{\pr A} \pr A = \pr_A B \pr A \\
+& \pr AB = \frac{\pr AB}{\pr B} \pr B = \pr_B A \pr B
+\end{aligned}\]
+
+\subsubsection{Def. (Независимые
+события)}\label{def.-ux43dux435ux437ux430ux432ux438ux441ux438ux43cux44bux435-ux441ux43eux431ux44bux442ux438ux44f}
+
+Естественно положить, что событие \(B\) \emph{не зависит} от события
+\(A\), если знание того факта, что \(A\) совершилось, никак не влияет на
+знания о событии \(B\), то есть: \(\pr_A B = \pr B\). Подробнее:
+\(\pr_A B = \frac{\pr AB}{\pr A} = \pr B\). На этой основе положим
+определение, допускающее в т.ч. нулевые события.
+
+События \(A, B\) называются \emph{независимыми}, если
+\(\pr AB = \pr A \pr B\)
+
+\subsubsection{Свойства независимых
+событий}\label{ux441ux432ux43eux439ux441ux442ux432ux430-ux43dux435ux437ux430ux432ux438ux441ux438ux43cux44bux445-ux441ux43eux431ux44bux442ux438ux439}
+
+Если \(A\) и \(B\) независимы, то
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+
+\item
+  \(\pr_B A = \frac{\pr AB}{\pr B} = \pr A\)
+\item
+  \(A^\complement, B\) --- независимы
+\item
+  \(A, B^\complement\) --- независимы \[\begin{aligned}
+  & A = AB + AB^\complement \\
+  & \pr AB^\complement = \pr A - \pr AB = \pr A - \pr A \pr B = \pr A (1 - \pr B) = \pr A \pr B^\complement
+  \end{aligned}\]
+\item
+  \(A^\complement, B^\complement\) --- независимы
+\item
+  Если
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  
+  \item
+    \(A, B_1\) --- независимы
+  \item
+    \(A, B_2\) --- независимы
+  \item
+    \(B_1, B_2\) --- независимы То \(A, B_1+B_2\) --- независимы
+  \end{enumerate}
+\item
+  Два несовместных события --- независимы
+\end{enumerate}
+
+\subsubsection{Независимость систем
+событий}\label{ux43dux435ux437ux430ux432ux438ux441ux438ux43cux43eux441ux442ux44c-ux441ux438ux441ux442ux435ux43c-ux441ux43eux431ux44bux442ux438ux439}
+
+\paragraph{Def. (Независимые
+алгебры)}\label{def.-ux43dux435ux437ux430ux432ux438ux441ux438ux43cux44bux435-ux430ux43bux433ux435ux431ux440ux44b}
+
+Алгебры \(\SigmaField_1, \SigmaField_2\) называются независимыми, если
+независимы любые два множества
+\(A_1\in\SigmaField_1, A_2\in\SigmaField_2\)
+
+\paragraph{Def. (Независимые
+события)}\label{def.-ux43dux435ux437ux430ux432ux438ux441ux438ux43cux44bux435-ux441ux43eux431ux44bux442ux438ux44f-1}
+
+Говорят, что \(n\) событий \(A_1, A_2, \ldots, A_n\) ---
+\emph{независимы (статистически независимы) в совокупности}, если
+\(\forall {k=\overline{1,n}}\)
+\(\forall \{m_j\},\quad {1\leq m_j\leq n},\quad {m_{j}<m_{j+1}},\quad j=\overline{1,k}\)
+
+\[\pr A_{m_1} A_{m_2} \ldots A_{m_k} = \pr A_{m_1} \pr A_{m_2} \ldots \pr A_{m_k}\]
+
+\paragraph{Def. (Независимые
+алгебры)}\label{def.-ux43dux435ux437ux430ux432ux438ux441ux438ux43cux44bux435-ux430ux43bux433ux435ux431ux440ux44b-1}
+
+Алгебры \(\SigmaField_1, \SigmaField_2, \ldots, \SigmaField_n\)
+называются независимыми, если любые
+\(A_1\in\SigmaField_1, A_2\in\SigmaField_2, \ldots, A_n\in\SigmaField_n\)
+независимы

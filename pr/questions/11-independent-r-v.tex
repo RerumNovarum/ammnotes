@@ -1,0 +1,41 @@
+\subsection{Независимые случайные величины. Их функции распределения и
+плотности
+вероятности}\label{ux43dux435ux437ux430ux432ux438ux441ux438ux43cux44bux435-ux441ux43bux443ux447ux430ux439ux43dux44bux435-ux432ux435ux43bux438ux447ux438ux43dux44b.-ux438ux445-ux444ux443ux43dux43aux446ux438ux438-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f-ux438-ux43fux43bux43eux442ux43dux43eux441ux442ux438-ux432ux435ux440ux43eux44fux442ux43dux43eux441ux442ux438}
+
+\subsubsection{Def. (Независимые случайные
+величины)}\label{def.-ux43dux435ux437ux430ux432ux438ux441ux438ux43cux44bux435-ux441ux43bux443ux447ux430ux439ux43dux44bux435-ux432ux435ux43bux438ux447ux438ux43dux44b}
+
+Случайные величины \(X_t, t\in T\) \emph{независимы}, если для каждого
+конечного класса \((S_{t_1},\ldots,S_{t_n})\) борелевских множеств в
+\(\RR\)
+
+\[\pr \cap_{k=1}^n [X_{t_k} \in S_{t_k}] = \prod_{k=1}^n \pr [X_{t_k} \in S_{t_k}]\]
+
+\subsubsection{Lemma (О
+умножениях)}\label{lemma-ux43e-ux443ux43cux43dux43eux436ux435ux43dux438ux44fux445}
+
+Если \(X_1, \ldots, X_n\) независимы, то
+\[\E \prod_{k=1}^n X_k = \prod_k \E X_k\]
+
+Докажем для \(n=2\). Пусть сначала \(X, Y\) --- неотрицательные простые
+(или элементарные): \(X=\sum_j x_j I_{A_j}\),
+\(Y = \sum_k y_k I_{B_k}\). Без ограничения будем считать как \(x_j\),
+так и \(y_k\) различными, положив \(A_j = [X=x_j]\), \(B_k = [Y=y_k]\).
+
+\[ \E XY = \E \sum_{jk} x_j y_k I_{A_j B_k} = \sum_{jk} x_j y_k \pr A_j \pr B_k = \sum_j x_j \pr A_j \sum_k y_k \pr B_k = \E X \E Y \]
+
+Общий случай: (TODO; см. Лоэв, Теория вероятностей, ИИЛ, 1962, с. 240)
+
+\subsubsection{Функция
+распределения}\label{ux444ux443ux43dux43aux446ux438ux44f-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
+
+\(X = (X_1, \ldots, X_n)\)
+\[F_X(x_1, \ldots, x_n) = \pr[ X_1\leq x_1, \ldots, X_n\leq x_n = \pr [X_1\leq x_1]\ldots\pr [X_n\leq x_n] = F_{X_1}(x_1) \cdots F_{X_n}(x_n)\]
+
+\subsubsection{Плотность
+распределения}\label{ux43fux43bux43eux442ux43dux43eux441ux442ux44c-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
+
+\[f_X = \frac{\partial^n F}{\partial x} =
+        \frac{\partial^n F}{\partial x_1 \cdots \partial x_n} = 
+        \frac{\partial F}{\partial x_1} \cdots \frac{\partial F}{\partial x_n} =
+        f_{X_1} \cdots f_{X_n} \]

@@ -1,0 +1,173 @@
+\subsection{Случайные величины. Дискретные и непрерывные случайные
+величины. Смешанные случайные
+величины}\label{ux441ux43bux443ux447ux430ux439ux43dux44bux435-ux432ux435ux43bux438ux447ux438ux43dux44b.-ux434ux438ux441ux43aux440ux435ux442ux43dux44bux435-ux438-ux43dux435ux43fux440ux435ux440ux44bux432ux43dux44bux435-ux441ux43bux443ux447ux430ux439ux43dux44bux435-ux432ux435ux43bux438ux447ux438ux43dux44b.-ux441ux43cux435ux448ux430ux43dux43dux44bux435-ux441ux43bux443ux447ux430ux439ux43dux44bux435-ux432ux435ux43bux438ux447ux438ux43dux44b}
+
+Пусть \((\Omega, \SigmaField, \pr)\) --- пространство с вероятностью.
+
+\subsubsection{Def. (Разбиние, индуцированное
+функцией)}\label{def.-ux440ux430ux437ux431ux438ux43dux438ux435-ux438ux43dux434ux443ux446ux438ux440ux43eux432ux430ux43dux43dux43eux435-ux444ux443ux43dux43aux446ux438ux435ux439}
+
+Всякая функция \(X : \Omega\mapsto\Omega\prime\) индуцирует разбиение
+пространства \(\Omega\), образованное прообразами
+\(X^{-1}(\omega\prime)\) точек \(\omega\prime\in\Omega\prime\). Функия
+\(X\) называется \emph{постоянной} на множестве
+\(X^{-1}(\omega\prime)\). Если индуцированное разбиение конечно или
+счётно, то функция \(X\) называется, соответственно, конечнозначной или
+счётнозначной.
+
+Всякую счётнозначную функцию \(X\) можно записать в виде
+\(X = \sum_{j\in J} I_{A_j} \omega\prime_j\)
+
+Где \(I_A\) --- индикатор. \[
+  I_A(\omega) =
+  \left\{
+  \begin{aligned}
+    & 0 & \omega \notin A \\
+    & 1 & \omega \in A
+  \end{aligned}
+  \right.
+\]
+
+\subsubsection{Def. (Счётнозначная измеримая
+функция)}\label{def.-ux441ux447ux451ux442ux43dux43eux437ux43dux430ux447ux43dux430ux44f-ux438ux437ux43cux435ux440ux438ux43cux430ux44f-ux444ux443ux43dux43aux446ux438ux44f}
+
+Счётнозначной \emph{измеримой} функцией называется функция вида
+\hbox{$X = \sum_j I_{A_j}\omega\prime_j$}, где множества \(A_j\)
+измеримы (\(A_j \in \SigmaField\)).
+
+Пусть даны два измеримых пространства \((\Omega, \SigmaField)\),
+\((\Omega\prime, \SigmaField\prime)\). Счётнозначная функция
+\hbox{$X = \sum_j I_{A_j}\omega\prime_j, \quad A_j\in\SigmaField$}
+называется \emph{элементарной функцией}, а если функция ещё и
+\emph{конечнозначна}, то она называется \emph{простой}.
+
+\subsubsection{Def. (Элементарная случайная
+величина)}\label{def.-ux44dux43bux435ux43cux435ux43dux442ux430ux440ux43dux430ux44f-ux441ux43bux443ux447ux430ux439ux43dux430ux44f-ux432ux435ux43bux438ux447ux438ux43dux430}
+
+\emph{Элементарной случайной величиной} называется конечная числовая
+\emph{измеримая} счётнозначная функция \(X : \Omega\mapsto\RR\).
+Конечнозначная случайная величина называется \emph{простой}.
+
+Такое задание случайной величины даёт представление о её распределении в
+\((\Omega, \SigmaField)\). На практике же часто возникает вопрос о
+распределении случайной величины на множестве её значений.
+
+Пусть \((\Omega, \SigmaField, \pr)\) --- вероятностное пространство,
+\(X : \Omega\mapsto\tilde{\mathcal X}\) --- элементарная случайная
+величина, \(\mathcal X = \{ x_1, x_2, \ldots \}\) --- множество её
+значений. Рассмотрим вероятность \(\pr_X : S(\mathcal X)\mapsto [0,1]\),
+индуцируемую на \(\mathcal X\) случайной величиной \(X\) формулой
+\(\pr_X(A) = \pr \{\omega: X(\omega)\in A\}, A\in S(\mathcal X)\)
+
+Значения этих вероятностей определяются вероятнстями
+\(\pr_X (x_j) = \pr \{ \omega : X(\omega)=x_j \}, \quad x_j\in \mathcal X\)
+
+\subsubsection{Def. (Распределение элементарной случайной
+величины)}\label{def.-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux435-ux44dux43bux435ux43cux435ux43dux442ux430ux440ux43dux43eux439-ux441ux43bux443ux447ux430ux439ux43dux43eux439-ux432ux435ux43bux438ux447ux438ux43dux44b}
+
+Числовая последовательность \(( \pr_X(x_1), \pr_X(x_2), \ldots )\)
+называется \emph{распределением} вероятностей случайной величины \(X\).
+
+\subsubsection{Пример}\label{ux43fux440ux438ux43cux435ux440}
+
+Случайная величина \(X : \Omega\mapsto\RR\) принимающая лишь два
+значения --- \(0\) или \(1\) --- имеет распределение Бернулли. Для неё
+\(\pr_X (x) = p^x (1-p)^{1-x}\).
+
+\subsubsection{Def. (Функция распределения элементарной случайной
+величины)}\label{def.-ux444ux443ux43dux43aux446ux438ux44f-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f-ux44dux43bux435ux43cux435ux43dux442ux430ux440ux43dux43eux439-ux441ux43bux443ux447ux430ux439ux43dux43eux439-ux432ux435ux43bux438ux447ux438ux43dux44b}
+
+Функцией распределения элементарной случайной величины \(X\) называется
+функция \(F_X : \mathcal X\mapsto [0,1]\), определяемая формулой
+\[ F_X (x) = \pr \{\omega: X(\omega) \leq x \} = \sum\limits_{x_i \leq x} \pr_X (x_i)\]
+\[ \pr_X (x_i) = F_X (x_i) - F_X(x_i - 0)\] Где
+\(F_X (x_i - 0) = \lim\limits_{t\uparrow x_i} F_X (t)\)
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+Есть разные способы расширить определение измеримой функции и классы
+измеримых по этим определениям функций, вообще говоря, не совпадают.
+
+Заметим, что элементы \(\sigma\)-алгебры, индуцированной отображением
+\(X\) измеримы (\(\in\SigmaField\)). Расширяя это свойство:
+
+\subsubsection{Def.1 (Измеримая
+функция)}\label{def.1-ux438ux437ux43cux435ux440ux438ux43cux430ux44f-ux444ux443ux43dux43aux446ux438ux44f}
+
+\emph{Измеримой} называется функция \(X : \Omega\mapsto\Omega\prime\),
+относительно которой прообразы измеримых множеств измеримы.
+
+\subsubsection{Def.2 (Измеримая функция --- альтернативное
+определение)}\label{def.2-ux438ux437ux43cux435ux440ux438ux43cux430ux44f-ux444ux443ux43dux43aux446ux438ux44f-ux430ux43bux44cux442ux435ux440ux43dux430ux442ux438ux432ux43dux43eux435-ux43eux43fux440ux435ux434ux435ux43bux435ux43dux438ux435}
+
+Если в \(\Omega\prime\) введено понятие предела, то \emph{измеримыми
+функциями}, в смысле этого предела, называются пределы сходящихся
+последовательностей простых функций (или равномерные пределы
+элементарных функций).
+
+Пусть дано пространство с вероятностью \((\Omega, \SigmaField, \pr)\)
+
+\subsubsection{TODO}\label{todo}
+
+\begin{itemize}
+
+\item
+  \(\RR\)
+
+  \begin{itemize}
+  
+  \item
+    Борелева алгебра
+  \item
+    Измеримость
+  \item
+    Эквивалентность двух определений в случае Борелевой алгебры
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Def. (Случайная
+величина)}\label{def.-ux441ux43bux443ux447ux430ux439ux43dux430ux44f-ux432ux435ux43bux438ux447ux438ux43dux430}
+
+\emph{Случайной величиной} называется конечная \emph{числовая измеримая}
+функция \(X : \Omega\mapsto\RR\)
+
+\subsubsection{Def. (Функция
+распределения)}\label{def.-ux444ux443ux43dux43aux446ux438ux44f-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Дискретные и непрерывные случайные
+величины}\label{ux434ux438ux441ux43aux440ux435ux442ux43dux44bux435-ux438-ux43dux435ux43fux440ux435ux440ux44bux432ux43dux44bux435-ux441ux43bux443ux447ux430ux439ux43dux44bux435-ux432ux435ux43bux438ux447ux438ux43dux44b}
+
+\paragraph{Def. (Дискретная случайная
+величина)}\label{def.-ux434ux438ux441ux43aux440ux435ux442ux43dux430ux44f-ux441ux43bux443ux447ux430ux439ux43dux430ux44f-ux432ux435ux43bux438ux447ux438ux43dux430}
+
+\emph{Дискретная случайная величина} \(:=\) элементарная случайная
+величина. Определяется \emph{функцией распределения масс} (PMF).
+
+\paragraph{Def. (Непрерывная случайная
+величина)}\label{def.-ux43dux435ux43fux440ux435ux440ux44bux432ux43dux430ux44f-ux441ux43bux443ux447ux430ux439ux43dux430ux44f-ux432ux435ux43bux438ux447ux438ux43dux430}
+
+\(:=\) случайная величина, определяемая непрерывной функцией плотности
+распределения вероятности.
+
+\subsubsection{Способы задания распределения случайной
+величины}\label{ux441ux43fux43eux441ux43eux431ux44b-ux437ux430ux434ux430ux43dux438ux44f-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f-ux441ux43bux443ux447ux430ux439ux43dux43eux439-ux432ux435ux43bux438ux447ux438ux43dux44b}
+
+\paragraph{Дискретная случайная
+величина}\label{ux434ux438ux441ux43aux440ux435ux442ux43dux430ux44f-ux441ux43bux443ux447ux430ux439ux43dux430ux44f-ux432ux435ux43bux438ux447ux438ux43dux430}
+
+\subparagraph{Ряд
+распределения}\label{ux440ux44fux434-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
+
+\subparagraph{Многоугольник
+распределения}\label{ux43cux43dux43eux433ux43eux443ux433ux43eux43bux44cux43dux438ux43a-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
+
+\paragraph{Непрерывная случайная
+величина}\label{ux43dux435ux43fux440ux435ux440ux44bux432ux43dux430ux44f-ux441ux43bux443ux447ux430ux439ux43dux430ux44f-ux432ux435ux43bux438ux447ux438ux43dux430}
+
+\subparagraph{Функция
+распределения}\label{ux444ux443ux43dux43aux446ux438ux44f-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}
+
+\subparagraph{Плотность
+распределения}\label{ux43fux43bux43eux442ux43dux43eux441ux442ux44c-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux435ux43dux438ux44f}

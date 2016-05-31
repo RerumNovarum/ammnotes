@@ -1,15 +1,9 @@
-CC=./makepdf.py
+TOPICS=de pr stats
 
-all: pr.pdf de.pdf pr.exam.pdf de.exam.pdf stats.pdf
+topics:
+	for d in $(TOPICS); do \
+			$(MAKE) -C $$d; \
+	done
 
-pr.pdf: pr/includes/* pr/lectures/* pr/questions/* pr/cards/* pr/cheatsheets/*
-	$(CC) pr/includes pr/lectures pr/questions pr/cards pr/cheatsheets
-	cp out/out.pdf pr.pdf
-
-de.pdf: de/includes/* de/lectures/* de/questions/*
-	$(CC) de/includes de/lectures de/questions
-	cp out/out.pdf de.pdf
-
-stats.pdf: de/includes/* stats/questions/*.markdown
-	$(CC) stats/includes stats/questions/*.markdown
-	cp out/out.pdf stats.pdf
+%.pdf: topics
+	cp $*/$*.pdf ./

@@ -1,0 +1,46 @@
+\subsection{Сходимость случайных последовательностей. ЦПТ для
+одинаково-распределённых случайных
+величин}\label{ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux441ux43bux443ux447ux430ux439ux43dux44bux445-ux43fux43eux441ux43bux435ux434ux43eux432ux430ux442ux435ux43bux44cux43dux43eux441ux442ux435ux439.-ux446ux43fux442-ux434ux43bux44f-ux43eux434ux438ux43dux430ux43aux43eux432ux43e-ux440ux430ux441ux43fux440ux435ux434ux435ux43bux451ux43dux43dux44bux445-ux441ux43bux443ux447ux430ux439ux43dux44bux445-ux432ux435ux43bux438ux447ux438ux43d}
+
+\subsubsection{Def. (Случайная
+последовательность)}\label{def.-ux441ux43bux443ux447ux430ux439ux43dux430ux44f-ux43fux43eux441ux43bux435ux434ux43eux432ux430ux442ux435ux43bux44cux43dux43eux441ux442ux44c}
+
+\ldots{}
+
+Пусть \((\Omega, \FF, \mu)\) --- пространство с мерой.
+
+\subsubsection{\texorpdfstring{Def. (Сходимость
+\emph{почти-всюду})}{Def. (Сходимость почти-всюду)}}\label{def.-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43fux43eux447ux442ux438-ux432ux441ux44eux434ux443}
+
+Говорят, что последовательность измеримых функций \(X_n\) сходится
+\emph{почти-всюду} к функции \(X\), если она сходится к \(X\) везде,
+кроме нулевого множества.
+
+\subsubsection{\texorpdfstring{Th. (Критерий \emph{ae}
+сходимости)}{Th. (Критерий ae сходимости)}}\label{th.-ux43aux440ux438ux442ux435ux440ux438ux439-ae-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux438}
+
+\[X_n \xrightarrow{\texttt{a.e.}} X \iff \forall\varepsilon > 0 \quad \mu \cup_n\cap_v \left[{ \left|{X-X_n}\right|\geq\varepsilon }\right] = 0 \]
+
+\subsubsection{Def. (Сходимость по
+мере)}\label{def.-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43fux43e-ux43cux435ux440ux435}
+
+Говорят, что \(X_n\) сходится по мере к \(X\), если
+\[\forall\varepsilon > 0 \quad \mu\left[{ |X_n - X| \geq \varepsilon }\right] \to 0\]
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+Пусть \((\Omega, \FF, \pr)\) --- вероятностное пространство.
+
+\subsubsection{Def. (Сходимость по
+вероятности)}\label{def.-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43fux43e-ux432ux435ux440ux43eux44fux442ux43dux43eux441ux442ux438}
+
+Говорят, что \(X_n\) сходится по вероятности к \(X\), если
+
+\[\forall\varepsilon > 0 \quad \pr [|X_n - X|\geq\varepsilon] \to 0\]
+
+\subsubsection{Def. (Сходимость
+почти-наверное)}\label{def.-ux441ux445ux43eux434ux438ux43cux43eux441ux442ux44c-ux43fux43eux447ux442ux438-ux43dux430ux432ux435ux440ux43dux43eux435}
+
+Говорят, что \(X_n\) сходится \emph{почти-наверное} к \(X\), если
+
+\[ \pr \cup_{k\geq n} [ |X_k - X| \geq\varepsilon] \to 0 \]

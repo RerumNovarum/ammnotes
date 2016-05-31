@@ -1,0 +1,53 @@
+\subsection{Характеристическая
+функция}\label{ux445ux430ux440ux430ux43aux442ux435ux440ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux444ux443ux43dux43aux446ux438ux44f}
+
+\subsubsection{Def. (Характеристическая
+функция)}\label{def.-ux445ux430ux440ux430ux43aux442ux435ux440ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux444ux443ux43dux43aux446ux438ux44f}
+
+Распределению задаваемому функцией распределения \(F\) соответствует
+единственная характеристическая функция \(g\)
+\[ g(u) = \int e^{iux} \dd F(x), \quad u\in\RR \]
+
+\subsubsection{\texorpdfstring{Характеристическая функция дискретной
+r.v.
+\(X\)}{Характеристическая функция дискретной r.v. X}}\label{ux445ux430ux440ux430ux43aux442ux435ux440ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux444ux443ux43dux43aux446ux438ux44f-ux434ux438ux441ux43aux440ux435ux442ux43dux43eux439-r.v.-x}
+
+\(g_X(u) = \sum_{j=1}^m e^{i u x_j} \pr [X=x_j]\)
+
+\subsubsection{\texorpdfstring{Характеристическая функция непрерывной
+r.v.
+\(X\)}{Характеристическая функция непрерывной r.v. X}}\label{ux445ux430ux440ux430ux43aux442ux435ux440ux438ux441ux442ux438ux447ux435ux441ux43aux430ux44f-ux444ux443ux43dux43aux446ux438ux44f-ux43dux435ux43fux440ux435ux440ux44bux432ux43dux43eux439-r.v.-x}
+
+\(g_X(u) = \int_{-\infty}^{+\infty} e^{iux} f_X (u) \dd x\), где \(f_X\)
+--- плотность.
+
+\subsubsection{Свойства}\label{ux441ux432ux43eux439ux441ux442ux432ux430}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(|g_X (t)| \leq 1\)
+\item
+  \(g_X(0) = 1\)
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  
+  \item
+    \(g_X(t) = \E e^{iu X}\)
+  \item
+    \(g_X(0) = \E e^0 = 1\)
+  \end{enumerate}
+\item
+  \(g_X(-t) = \overline{g_X(t)}\)
+\item
+  Если \(Y = a+bX\), то \(g_Y = e^{iub} g_X(au)\)
+\item
+  Если \(X_1, \ldots, X_n\) --- независимые, \(Y = \sum_j X_j\), то
+
+  \(g_Y(t) = \prod\limits_{j=1}^n g_{X_j}(t)\)
+
+  Действительно:
+
+  \(g_Y(t) = \E e^{iYt} = \E e^{\sum_j i X_j t} = \E \prod_{j=1}^n e^{i X_j t} = \prod_{j=1}^n \E e^{i X_j t} = \prod_{j=1}^n g_{X_j}(t)\)
+\end{enumerate}

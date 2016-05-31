@@ -1,0 +1,115 @@
+\section{Системы линейных дифференциальных
+уравнений}\label{ux441ux438ux441ux442ux435ux43cux44b-ux43bux438ux43dux435ux439ux43dux44bux445-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux430ux43bux44cux43dux44bux445-ux443ux440ux430ux432ux43dux435ux43dux438ux439}
+
+\subsection{Def. (Линейная система дифференциальных
+уравнений)}\label{def.-ux43bux438ux43dux435ux439ux43dux430ux44f-ux441ux438ux441ux442ux435ux43cux430-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux430ux43bux44cux43dux44bux445-ux443ux440ux430ux432ux43dux435ux43dux438ux439}
+
+Система \[
+\left\{ \begin{aligned}
+  & \dot x_1(t) &&= a_{1 1}(t) x_1(t) + a_{1 2}(t) x_2(t) + \ldots + a_{1 n}(t) x_n(t) + b_1(t) \\
+  & \dot x_2(t) &&= a_{2 1}(t) x_1(t) + a_{2 2}(t) x_2(t) + \ldots + a_{2 n}(t) x_n(t) + b_2(t) \\
+  & \vdots && \\
+  & \dot x_n(t) &&= a_{n 1}(t) x_1(t) + a_{n 2}(t) x_2(t) + \ldots + a_{n n}(t) x_n(t) + b_n(t)
+\end{aligned} \right.
+\]
+
+Здесь:
+
+\(a_{i j} : (q_1, q_2) \mapsto \RR, \quad i,j = \overline{1,n}\),
+
+\(b_i \in \RR \quad i=\overline{1,n}\) --- заданные коэффициенты, а
+
+\(x_i : (q_1, q_2) \mapsto \RR, \quad i=\overline{1,n}\) --- искомые
+функции,
+
+называется \textbf{линейной системой дифференциальных уравнений с
+переменными коэффициентами}.
+
+\subsubsection{В векторном
+виде:}\label{ux432-ux432ux435ux43aux442ux43eux440ux43dux43eux43c-ux432ux438ux434ux435}
+
+\[\begin{aligned}
+& \dot{\mathbf x}(t) = A(t) \mathbf x(t) + \mathbf{b}(t) \\
+& \mathbf b =
+  \begin{pmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_n
+    \end{pmatrix},\quad 
+  \mathbf x =
+  \begin{pmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+    \end{pmatrix} \\
+& A = 
+  \begin{pmatrix}
+      & a_{1 1} & a_{1 2} & \ldots & a_{1 n} & \\
+      & a_{2 1} & a_{2 2} & \ldots & a_{2 n}   \\
+      & \vdots  & \vdots  & \ddots & \vdots    \\
+      & a_{n 1} & a_{n 2} & \cdots & a_{n n}
+      \end{pmatrix} \\
+& \begin{aligned}
+& \mathbf x &&: (q_1, q_2) && \mapsto \RR^n \\
+& \mathbf b &&: (q_1, q_2) && \mapsto \RR^n \\
+& A &&: (q_1, q_2) && \mapsto \RR^{n\times n}
+\end{aligned}
+\end{aligned}\]
+
+\subsubsection{Nota bene:}\label{nota-bene}
+
+Далее это уравнение будем записывать в виде \[\dot x = A x + b\],
+подразумевая тождественное равенство функций на некотором промежутке
+
+\subsection{Def. (ЛНСДУ)}\label{def.-ux43bux43dux441ux434ux443}
+
+Линейная система называется неоднородной, если \(\sum_j |b_j| \neq 0\)
+(где \(0\) --- функция, тождественно равная нулю)
+
+\subsection{Def. (ЛОСДУ)}\label{def.-ux43bux43eux441ux434ux443}
+
+Линейная система называется однородной, если \(\sum_j |b_j| \equiv 0\)
+
+\subsection{Def. (Решение
+ЛСДУ)}\label{def.-ux440ux435ux448ux435ux43dux438ux435-ux43bux441ux434ux443}
+
+Решение линейной системы дифференциальных уравнений \(\dot x = A x + b\)
+называется векторная функция \(\phi : (q_1, q_1) \mapsto \RR^n\),
+определённая на некотором интервале \((q_1, q_2)\), обращающая уравнение
+в тождество на этом интервале.
+
+\subsection{Def. (Общее
+решение)}\label{def.-ux43eux431ux449ux435ux435-ux440ux435ux448ux435ux43dux438ux435}
+
+Общим решением системы называется семейство функций
+\(\phi_{c_1, c_2, \ldots, c_n}\), зависящих от параметров
+\(c_1, c_2, \ldots, c_n\), такое что
+\(\forall c_1, \ldots, c_n \quad \phi_{c_1 \ldots c_n}\) является
+решением, и \(\forall\) решения \(\phi\)
+\(\exists c_1, \ldots, c_n: \quad \phi = \phi_{c_1 \ldots c_n}\).
+
+\subsection{Def. (Задача Коши для
+ЛСДУ)}\label{def.-ux437ux430ux434ux430ux447ux430-ux43aux43eux448ux438-ux434ux43bux44f-ux43bux441ux434ux443}
+
+Найти решение системы \(\dot x = A x + b\), удовлетворяющее
+\emph{начальным условиям} \[
+\mathbf x(t_0) = \mathbf x_0 =
+{\begin{pmatrix}
+x_0^0 & x_1^0 & \cdots & x_n^0
+\end{pmatrix}}^{\mathtt T}\]
+
+\subsection{Th. (Формулировка теоремы существования и
+единственности)}\label{th.-ux444ux43eux440ux43cux443ux43bux438ux440ux43eux432ux43aux430-ux442ux435ux43eux440ux435ux43cux44b-ux441ux443ux449ux435ux441ux442ux432ux43eux432ux430ux43dux438ux44f-ux438-ux435ux434ux438ux43dux441ux442ux432ux435ux43dux43dux43eux441ux442ux438}
+
+Если \(A\) и \(b\) непрерывны на \((q_1, q_2)\),
+
+то \(\forall t_0 \in (q_1, q_2) \quad\forall x_0 \in \RR^n\)
+
+задача Коши \[\left\{\begin{aligned}
+& \dot x &&= A x + b \\
+& x(t_0) &&= x_0
+\end{aligned}\right.\]
+
+имеет единственное решение, определённое на \((q_1, q_2)\).

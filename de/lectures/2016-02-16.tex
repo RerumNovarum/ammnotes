@@ -1,0 +1,165 @@
+\subsection{Формула
+Лиувилля}\label{ux444ux43eux440ux43cux443ux43bux430-ux43bux438ux443ux432ux438ux43bux43bux44f}
+
+\subsubsection{Def. (След
+матрицы)}\label{def.-ux441ux43bux435ux434-ux43cux430ux442ux440ux438ux446ux44b}
+
+Выражение \(\Tr A = \sum_{j=1}^n a_{j j}\) называется \textbf{следом
+матрицы}. (\(\Tr\) for \emph{trace})
+
+Альтернативная нотация: \(\Sp A\) (ger. \emph{Spur}).
+
+\subsubsection{Th. (Формула
+Лиувилля)}\label{th.-ux444ux43eux440ux43cux443ux43bux430-ux43bux438ux443ux432ux438ux43bux43bux44f}
+
+Для определителя вронского \(\W\) системы решений ЛОДУ (1) справедлива
+\textbf{формула Лиувилля}:
+\[ \W = \W(t_0) \exp(\int_{t_0}^t \Tr A(s) \dd s) \]
+
+\begin{proof}
+  Найдём $\dot\W$:
+  $$ \dot\W =
+  \begin{vmatrix}
+  & \dot\phi_{1 1} & \cdots & \dot\phi_{1 n} \\
+  & \vdots     & \ddots & \vdots     \\
+  & \phi_{n 1} & \cdots & \phi_{n n} \\
+  \end{vmatrix}
+  + \cdots + 
+  \begin{vmatrix}
+  & \phi_{1 1} & \cdots & \phi_{1 n} \\
+  & \vdots     & \ddots & \vdots     \\
+  & \dot\phi_{n 1} & \cdots & \dot\phi_{n n} \\
+  \end{vmatrix}
+  $$
+
+Заметим:
+$$\begin{aligned}
+\dot x_j = \sum_{j=1}^n a_{i j} x_j, \quad j=\overline{1,n}\\
+\cdots\\
+\phi_{i k} = \sum_{j=1}^n a_{i j} \phi_{j k}
+\end{aligned}$$
+
+Следовательно:
+$$ \dot\W = 
+\begin{vmatrix}
+& \sum_{j=1}^n a_{1 j} \phi_{j 1} & \cdots & \sum_{j=1}^n a_{1 j} \phi_{j n} \\
+& \phi_{2 1} & \cdots & \phi_{2 n} \\
+& \vdots     & \ddots & \vdots \\
+& \phi_{n 1} & \cdots & \phi_{n n}
+\end{vmatrix}
+ + \cdots + 
+\begin{vmatrix}
+& \phi_{1 1} & \cdots & \phi_{1 n} \\
+& \vdots     & \ddots & \vdots     \\
+& \phi_{n-1, 1} & \cdots & \phi_{n-1, n} \\
+& \sum_{j=1}^n a_{n j} \phi_{j 1} & \cdots & \sum_{j=1}^n a_{n j} \phi_{j n}
+\end{vmatrix}
+$$
+
+Теперь в первом определителе
+
+1.  Прибавим к первой строке вторую, домноженную на $-a_{1 2}$ \\
+2.   Прибавим к первой строке третью, домноженную на $-a_{1 3}$ \\
+3.   $\cdots$ \\
+n.   Прибавим к первой строке $n$-й строку, домноженную на $-a_{1 n}$
+
+Аналогично поступим с остальными определителями.
+В результате останется:
+$$\begin{aligned}
+ \dot\W  &=
+&& \begin{vmatrix}
+ a_{1 1} \phi_{1 1} & \cdots & a_{1 1} \phi_{1 n} \\
+     \vdots & \ddots & \vdots \\
+     \phi_{n 1} & \cdots & \phi_{n n}
+    \end{vmatrix}
+&& + \cdots +
+&& \begin{vmatrix}
+ \phi_{1 1} & \cdots & \phi_{1 n} \\
+     \vdots     & \ddots & \vdots \\
+     a_{n n} \phi_{n 1} & \cdots & a_{n n} \phi_{n n} 
+    \end{vmatrix}\\
+& =
+a_{1 1} 
+&& \begin{vmatrix}
+ \phi_{1 1} & \cdots & \phi_{1 n} \\
+     \vdots & \ddots & \vdots \\
+     \phi_{n 1} & \cdots & \phi_{n n}
+    \end{vmatrix}
+&& + \cdots +
+a_{n n} 
+&& \begin{vmatrix}
+ \phi_{1 1} & \cdots & \phi_{1 n} \\
+       \vdots     & \ddots & \vdots \\
+       \phi_{n 1} & \cdots & \phi_{n n}
+      \end{vmatrix}
+= \sum_{j=1}^n a_{j j} \W
+\end{aligned}$$
+Это скалярное линейное Д.У. первого порядка, его решение имеет вид:
+
+$$\W(t) = \W(t_0) \exp(\int_{t_0}^t \Tr A(s) \dd s)$$
+\end{proof}
+
+\subsection{Матричное дифференциальное
+уравнение}\label{ux43cux430ux442ux440ux438ux447ux43dux43eux435-ux434ux438ux444ux444ux435ux440ux435ux43dux446ux438ux430ux43bux44cux43dux43eux435-ux443ux440ux430ux432ux43dux435ux43dux438ux435}
+
+Наряду с векторными уравнениями \(\dot x = A x\) рассмотрим матричные
+уравнения: \[\begin{aligned}
+& \dot X = A X \\
+& X : (q_1, q_2) \mapsto \RR^{n\times n} \\
+& A : (q_1, q_2) \mapsto \RR^{n\times n}
+\end{aligned}\]
+
+\subsection{Связь между векторными и матричными
+Д.У.}\label{ux441ux432ux44fux437ux44c-ux43cux435ux436ux434ux443-ux432ux435ux43aux442ux43eux440ux43dux44bux43cux438-ux438-ux43cux430ux442ux440ux438ux447ux43dux44bux43cux438-ux434.ux443.}
+
+Пусть дано матричное уравнение \[ \dot X = A X \] Матрицу \(X\) запишем
+в виде \(X = (X_1, \ldots, X_n)\), где \(X_j\) --- \(j\)-й столбец
+матрицы \(X\). Матричное уравнение теперь можно записать в виде: \[
+(\dot X_1, \ldots, \dot X_n) = (A X_1, \ldots, A X_n)
+\] Тогда матричная функция будет являться решением данного матричного
+уравнения тогда и только тогда, когда её векторы-столбцы будут являться
+решениями векторного Д.У.
+
+\subsection{Фундаментальная
+матрица}\label{ux444ux443ux43dux434ux430ux43cux435ux43dux442ux430ux43bux44cux43dux430ux44f-ux43cux430ux442ux440ux438ux446ux430}
+
+\subsubsection{Def. (Фундаментальная
+матрица)}\label{def.-ux444ux443ux43dux434ux430ux43cux435ux43dux442ux430ux43bux44cux43dux430ux44f-ux43cux430ux442ux440ux438ux446ux430}
+
+Матричная функция \(\Phi\) называется фундаментальной матрицей ЛОДУ
+\(\dot x = A x\), если её векторы-столбцы образуют ФСР этого уравнения
+
+Очевидно, что для того чтобы \(\Phi\) являлась фундаментальной матрицей,
+чтобы она была решением соответствующего матричного уравнения и была
+невырождена \(\forall t\in (q_1, q_2)\)
+
+\begin{proof}
+Необходимость:
+
+Пусть $\Phi$ фундаментальная, тогда её векторы столбцы образуют ФСР,
+  а значит они являются решениями и составленный из них определитель
+  есть определитель Вронского, который не обращается в нуль,
+  т.е. матрица невырожденна.
+
+Достаточность:
+
+Пусть $\Phi$ невырождена, а её столбцы являются решениями.
+Тогда её столбцы составляют систему из $n$ линейно-независимых решений и образуют ФСР.
+\end{proof}
+
+\subsubsection{Свойства фундаментальной
+матрицы}\label{ux441ux432ux43eux439ux441ux442ux432ux430-ux444ux443ux43dux434ux430ux43cux435ux43dux442ux430ux43bux44cux43dux43eux439-ux43cux430ux442ux440ux438ux446ux44b}
+
+Если \(\Phi\) --- фундаментальная, а \(C\in\RR^{n\times n}\)
+невырожденная числовая матрица, То: \[\Psi = \Phi C\] также является
+фундаментальной матрицей этого уравнения
+
+\begin{proof}
+  Требуется показать, что $\Psi$ является решением и невырождена:
+  $$\begin{aligned}
+  \det \Phi C = \det \Phi \det C \neq 0 \\
+  \dot \Psi = \dot \Phi C = A \Phi C = A \Psi
+  \end{aligned}$$
+  \end{proof}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
