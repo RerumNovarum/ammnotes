@@ -94,8 +94,9 @@ $T=\tau\circ X$ --- несмещённая оценка. Значит
 $$\E_\theta T = \int_\samplespace \tau(x)f(x;\theta) \dx = \theta
 \qquad \left|\frac\partial{\partial\theta}\right.$$
 $$\begin{aligned}
-\frac\partial{\partial\theta}\int_\samplespace \tau(x)f(x;\theta)\dx
-&= \int_\samplespace \tau(x) \frac\partial{\partial\theta} f(x;\theta)\dx
+1
+&=\frac\partial{\partial\theta}\int_\samplespace \tau(x)f(x;\theta)\dx
+ = \int_\samplespace \tau(x) \frac\partial{\partial\theta} f(x;\theta)\dx
  = \int_\samplespace \tau(x) \frac{\partial\ln f}{\partial\theta}(x;\theta)f(x;\theta)\dx \\
 &= \E_\theta(T U) = \E_\theta((T - \theta)(U-0)) + \underbrace{\theta\E_\theta U}_{=0}
  = \cov(T,U)
