@@ -1,36 +1,43 @@
 \subsection{Функция правдоподобия. Неравенство Крамера-Рао}
 
-Пусть $f_\theta:\RR\to\ab01$ --- плотность распределения r.v. $\xi$
-при данном значении параметра $\theta$,
-$X = (X_1, \dotsc, X_n)$ --- выборка из $\pop(\xi)$,
+Зададим класс допустимых распределений r.v. $\xi:\Omega_0\to\samplespace_0\subset\RR$
+функцией $$f: \RR\times\Theta\to\ab01$$
+при каждом фиксированном $\theta$ являющейся
+плотностью распределения вероятностей $f_\theta: \RR\to\ab01$
+соответствующего значению $\theta$ параметра
+
+Пусть $X = (X_1, \dotsc, X_n)$ --- выборка из $\pop(\xi)$,
 $x = X(\omega)$ --- реализация выборки.
-Символом $f_\theta:\samplespace\to\ab01$
-будем обозначать плотность распределения выборки
-$f_\theta(x) = \prod_{j=1}^n f_\theta(x_j)$
+Функцией $f:\samplespace\times\Theta\to\ab01$
+будем обозначать плотность распределения вероятностей выборки
+$f(x; \theta) = \prod_{j=1}^n f(x_j; \theta)$
 
 \begin{dfn}{Функция правдоподобия (likelihood fuction)}
 При фиксированном $x\in\samplespace$
-функция $L_x: \theta\mapsto f_\theta(x)$ называется функцией правдоподобия.
+функция $L: \theta\mapsto f(x;\theta)$ называется функцией правдоподобия.
 
 Далее будем считать,
 что при любом $x$
-отображение $\theta\mapsto f_\theta(x)$ дифференцируемо
+отображение $f$ дифференцируемо по $\theta$
 \end{dfn}
 
 \begin{dfn}{Вклад (score) выборки}
-При каждом $\theta\in\Theta$
-введём случайную величину $L_X(\theta)$,
-реализация $L_x(\theta)$ которой
-есть правдоподобие значения параметра $\theta$ при данной реализации выборки $x$.
-Обозначим
- ${L_{X_j}: \theta\mapsto (f_\theta\circ X_j)}$,
- ${L_{x_j}: \theta\mapsto f_\theta(x_j)}$,
+Пусть $$u = \frac{\partial\ln f}{\partial\theta}:\samplespace\times\Theta\to\RR$$
+--- частная производная функции логарифма правдоподобия.
+Вкладом выборки $X$
+называется случайная функция%
+\footnote{Далее случайные функции (аналогично последовательности, векторы)
+могут рассматриваться
+и как $\RR\to\rvspace$ отображения в пространство случайных величин,
+и как $\Omega\to\rvspace(\RR,\RR)$
+отображение из пространства элементарных событий в пространство измеримых функций,
+и как $\Omega\times\RR\to\RR$
+в зависимости от контекста и потребностей}
+$U:\Theta\to\rvspace$
+$$U(\theta)(\omega) = u(X(\omega);\theta) = u(x;\theta)$$
 
-Случайная величина $U$
-$$U = \frac{\partial \ln L_X(\theta)}{\partial\theta}$$
-$$U(\omega)
-= u(x) = \sum_{j=1}^n{\frac{\partial \ln L_{x_j}(\theta)}{\partial\theta}}$$
-Называется вкладом выборки $X$
+Вклад характеризует чувствительность плотности распределения выборки
+к изменению значения параметра $\theta$
 \end{dfn}
 
 \begin{dfn}{Регулярная статистическая модель}
@@ -44,22 +51,55 @@ $$U(\omega)
 \end{dfn}
 
 \begin{thm}{Свойства функции правдоподобия и вклада}
-$$\E_\theta L_X(\theta) = \int_\samplespace f_\theta(x) \dx = 1 \quad\forall\theta\in\Theta$$
-$$\E_\theta U = 0$$
+$$\E_\theta L(\theta) = \int_\samplespace f(x;\theta) \dx = 1 \quad\forall\theta\in\Theta$$
+$$\E_\theta U(\theta) = 0 \quad\forall\theta\in\Theta$$
 \end{thm}
 \begin{proof}
 Первое равенство естественно.
-Продифференцируем его:
-$$0 = \frac{\partial\int_\samplespace L_x(\theta) \dx}{\partial\theta}
-= \int_\samplespace \frac{\partial L_x(\theta)}{\partial\theta} \dx$$
-Заметим
-$$U(\omega) = \frac{\partial\ln L_x(\theta)}{\partial} L_x(\theta)
-= \frac{\partial L_x(\theta)}{\partial\theta)}\frac{1}{L_x(\theta)} L_x(\theta)
-= \frac{\partial L_x(\theta)}{\partial\theta)}$$
-Значит
-$$0
-= \int_\samplespace \frac{\partial\ln L_x(\theta)}{\partial} L_x(\theta) \dx
-= \int_\samplespace u(x) f_\theta(x) \dx
-= \E_\theta U$$
+
+$$\begin{aligned}
+\E_\theta U(\theta)
+&= \int_\samplespace \frac{\partial\ln f}{\partial\theta}(x;\theta) f(x;\theta)\dx
+ = \int_\samplespace \frac{\partial f}{\partial\theta}(x;\theta) \frac1{f(x;\theta)} f(x;\theta)\dx=\\
+&= \int_\samplespace \frac{\partial f}{\partial\theta}(x;\theta)\dx
+ = \frac{\partial}{\partial\theta} \int_\samplespace f(x;\theta)\dx
+ = \frac{\partial}{\partial\theta} 1
+ = 0
+\end{aligned}$$
 \end{proof}
 
+\begin{dfn}{Информация Фишера}
+\emph{Информацией Фишера}
+о параметре $\theta$
+содержащейся в выборке $X$
+называется функция $\fisherinfo:\Theta\to\RR_+$ (или её значение):
+$$\fisherinfo(\theta) = \D U(\theta) = \E U^2(\theta)$$
+
+А функции $\fisherinfo_j$
+$$\fisherinfo_j(\theta)
+= \D_\theta \frac{\partial\ln f(X_j;\theta)}{\partial\theta}
+= \int_\RR \left(\frac{\partial\ln f(t;\theta)}{\partial\theta}\right)^2 f(t;\theta) \dd t $$
+количеством информации о параметре $\theta$,
+содержащейся в $j$-м наблюдении
+
+$$\fisherinfo(\theta) = \sum_{j=1}^n \fisherinfo_j(\theta) = n\fisherinfo_1(\theta)$$
+\end{dfn}
+
+\begin{thm}{Неравенство Крамера-Рао}
+Для любой несмещённой оценки $T$ параметра $\theta$ справедливо
+$$\D_\theta T \geq \frac{1}{\fisherinfo(\theta)}$$
+\end{thm}
+\begin{proof}
+$T=\tau\circ X$ --- несмещённая оценка. Значит
+$$\E_\theta T = \int_\samplespace \tau(x)f(x;\theta) \dx = \theta
+\qquad \left|\frac\partial{\partial\theta}\right.$$
+$$\begin{aligned}
+\frac\partial{\partial\theta}\int_\samplespace \tau(x)f(x;\theta)\dx
+&= \int_\samplespace \tau(x) \frac\partial{\partial\theta} f(x;\theta)\dx
+ = \int_\samplespace \tau(x) \frac{\partial\ln f}{\partial\theta}(x;\theta)f(x;\theta)\dx \\
+&= \E_\theta(T U) = \E_\theta((T - \theta)(U-0)) + \underbrace{\theta\E_\theta U}_{=0}
+ = \cov(T,U)
+ \leq \sqrt{\D T \D U}
+\end{aligned}$$
+$$\D T \geq \frac{1}{\D U} = \frac{1}{\fisherinfo(\theta)}$$
+\end{proof}

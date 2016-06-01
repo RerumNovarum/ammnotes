@@ -4,7 +4,7 @@
 описывается вероятностной моделью $(\Omega, \mathcal A, \pr)$,
 где $\Omega$ --- пространство элементарных событий,
 $\mathcal A \subset 2^\Omega$ --- $\sigma$-алгебра событий,
-$\pr: \mathcal A\to \ab{0}{1}$ --- вероятностная мера,
+${\pr: \mathcal A\to \ab{0}{1}}$ --- вероятностная мера,
 а проводимый эксперимент соответствует случайной величине $\xi\in\rvspace$,
 с функцией распределения $F$.
 
@@ -31,8 +31,8 @@ $$(g\circ X)(\omega) = g(x)$$
 \end{dfn}
 
 \begin{dfn}{Точечная оценка параметра $\theta$}
-есть статистика $T\circ X$ (или для простоты сама функция $T$),
-реализацию $(T\circ X)(\omega) = T(x)$ которой принимают за приближённое значение парамтра $\theta$
+есть статистика ${T = \tau\circ X: \Omega\to\Theta}$,
+реализацию $T(\omega) = \tau(x)$ которой принимают за приближённое значение парамтра $\theta$
 \end{dfn}
 
 \subsubsection{Характеристики оценок}
@@ -40,7 +40,7 @@ $$(g\circ X)(\omega) = g(x)$$
 \begin{dfn}{Несмещённость (unbiasedness)}
 Несмещённой называют такую оценку $T$,
 что её математическим ожиданием является искомый параметр $\theta$:
-$$\E (T\circ X) = \theta$$
+$$\E T = \theta$$
 
 %Если же только
 %$$T\circ X \overset{\pr}{\underset{n\to\infty}{\to}} \E(T\circ X)$$
@@ -52,9 +52,9 @@ $$\E (T\circ X) = \theta$$
 если она сходится по вероятности к оцениваемому параметру:
 
 $$\lim_{n\to\infty}
-    \pr\{\omega\in\Omega; \left|(T\circ X)(\omega) - \theta\right| < \varepsilon \}
+    \pr\{\omega\in\Omega; \left|T(\omega) - \theta\right| < \varepsilon \}
 = \lim_{n\to\infty}
-    \pr\{\left|T(x) - \theta\right| < \varepsilon\}
+    \pr\{\left|\tau(x) - \theta\right| < \varepsilon\}
 = 1$$
 \end{dfn}
 
@@ -63,7 +63,7 @@ $$\lim_{n\to\infty}
 если среди всех оценок класса $\mathcal T$,
 оценка $T_0$ имеет минимальную дисперсию,
 то есть для любого $T\in\mathcal T$
-$$\D(T_0\circ X) \leq D(T\circ X)$$
+$$\D T_0 \leq D T$$
 
 Оценка называется \emph{оптимальной},
 если она оптимальна в классе всех несмещённых оценок
