@@ -1,0 +1,65 @@
+\subsection{Функция правдоподобия. Неравенство Крамера-Рао}
+
+Пусть $f_\theta:\RR\to\ab01$ --- плотность распределения r.v. $\xi$
+при данном значении параметра $\theta$,
+$X = (X_1, \dotsc, X_n)$ --- выборка из $\pop(\xi)$,
+$x = X(\omega)$ --- реализация выборки.
+Символом $f_\theta:\samplespace\to\ab01$
+будем обозначать плотность распределения выборки
+$f_\theta(x) = \prod_{j=1}^n f_\theta(x_j)$
+
+\begin{dfn}{Функция правдоподобия (likelihood fuction)}
+При фиксированном $x\in\samplespace$
+функция $L_x: \theta\mapsto f_\theta(x)$ называется функцией правдоподобия.
+
+Далее будем считать,
+что при любом $x$
+отображение $\theta\mapsto f_\theta(x)$ дифференцируемо
+\end{dfn}
+
+\begin{dfn}{Вклад (score) выборки}
+При каждом $\theta\in\Theta$
+введём случайную величину $L_X(\theta)$,
+реализация $L_x(\theta)$ которой
+есть правдоподобие значения параметра $\theta$ при данной реализации выборки $x$.
+Обозначим
+ ${L_{X_j}: \theta\mapsto (f_\theta\circ X_j)}$,
+ ${L_{x_j}: \theta\mapsto f_\theta(x_j)}$,
+
+Случайная величина $U$
+$$U = \frac{\partial \ln L_X(\theta)}{\partial\theta}$$
+$$U(\omega)
+= u(x) = \sum_{j=1}^n{\frac{\partial \ln L_{x_j}(\theta)}{\partial\theta}}$$
+Называется вкладом выборки $X$
+\end{dfn}
+
+\begin{dfn}{Регулярная статистическая модель}
+Статистическая модель,
+позволяющая
+дифференцировать (всякие $\int L$ и вообще всё что вздумается) по $\theta$,
+переставлять операторы интегрирования и дифференцирования,
+и разрешающая прочий матан называется регулярной
+
+Далее рассматриваются регулярные модели
+\end{dfn}
+
+\begin{thm}{Свойства функции правдоподобия и вклада}
+$$\E_\theta L_X(\theta) = \int_\samplespace f_\theta(x) \dx = 1 \quad\forall\theta\in\Theta$$
+$$\E_\theta U = 0$$
+\end{thm}
+\begin{proof}
+Первое равенство естественно.
+Продифференцируем его:
+$$0 = \frac{\partial\int_\samplespace L_x(\theta) \dx}{\partial\theta}
+= \int_\samplespace \frac{\partial L_x(\theta)}{\partial\theta} \dx$$
+Заметим
+$$U(\omega) = \frac{\partial\ln L_x(\theta)}{\partial} L_x(\theta)
+= \frac{\partial L_x(\theta)}{\partial\theta)}\frac{1}{L_x(\theta)} L_x(\theta)
+= \frac{\partial L_x(\theta)}{\partial\theta)}$$
+Значит
+$$0
+= \int_\samplespace \frac{\partial\ln L_x(\theta)}{\partial} L_x(\theta) \dx
+= \int_\samplespace u(x) f_\theta(x) \dx
+= \E_\theta U$$
+\end{proof}
+
