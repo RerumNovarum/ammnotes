@@ -20,7 +20,10 @@
 отображение из области \(X(\Omega)\) значений r.v. \(X\) в область
 \(k\)-мерного вещественного пространства.
 
-\(Y = (Y_1, \ldots, Y_k), \quad Y_j = \Psi_j(X)\) --- случайная величина
+\(Y = (Y_1, \ldots, Y_k), \quad Y_j = \Psi_j(X)\)%
+\footnote{
+  имеется в виду $\Psi_j\circ X$, т.е. $\omega\mapsto\Psi_j(X(\omega))$
+}--- случайная величина
 \(Y: \Omega\mapsto\Gamma\) (доказать: композиция борелевской ф-ии и
 случайной величины есть случайная величина).
 
@@ -50,9 +53,10 @@
   \(X = (X_1, \ldots, X_n)\) \(f_X : X(\Omega)\mapsto\RR_+\) ---
   плотность.
 
-  \(Y = (Y_1, \ldots, Y_k) = (\Psi_1(X), \ldots, \Psi_k(X)\) --- r.v.
+  \(Y = (Y_1, \ldots, Y_k) = (\Psi_1(X), \ldots, \Psi_k(X))\) --- r.v.
 
   \(F_Y(y) = \pr(\Psi(X)\leq y) = \idotsint_{\{ x: \Psi(x) \leq y \}} f_X(x) \dd x\),
+
   где
   \({x=(x_1, \ldots, x_n)}, {y=(y_1,\ldots,y_n)}, {\dd x = \dd x_1 \ldots \dd x_n}\)
 \end{enumerate}

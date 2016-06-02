@@ -1,0 +1,19 @@
+\subsection{Метод моментов}
+
+$X = (X_1, \dotsc, X_n)$ --- выборка из $\pop(\xi)\in\{F_\theta; \theta\in\Theta\}$.
+$\Theta\subset\RR^r$.
+
+Пусть существуют и конечные первые $r$ моментов $\alpha_k(\theta) = \E \xi_\theta^k$.
+Рассмотрим выборочнные моменты $A_k = \frac{1}{n}\sum_{j=1}^n X_j^k$.
+
+Метод оценивания состоит
+в решении относительно $\theta$ системы равенств
+$$a_k(\theta) = A_k(\omega) \qquad k=\overline{1,r}$$
+
+\begin{thm}
+Пусть $\tilde\theta$ --- оценка, полученная методом моментов.
+${\tilde\theta(\omega) = \phi(A_1(\omega), \dotsc, A_r(\omega))}$.
+Если $\phi$ непрерывна и взаимно-однозначна, то
+так как ${\lim_{n\to\infty} \pr \{A_k = \alpha_k\} = 1}$,
+то и ${\tilde\theta \overset{\pr}{\to} \theta}$
+\end{thm}

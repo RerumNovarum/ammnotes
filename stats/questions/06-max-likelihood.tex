@@ -1,0 +1,26 @@
+\subsection{Оценки максимального правдоподобия}
+
+Пусть $X=(X_1,\dotsc,X_n)$ --- выборка из $\pop(\xi) = \{ F_\theta; \theta\in\Theta \}$.
+При каждом $x\in\samplespace$, $L:\theta\to\ab01$ --- функция правдоподобия для реализации $x$.
+
+\begin{dfn}{Оценка максимального правдоподобия}
+Оценкой $\hat\theta$ максимального правдоподобия
+называется статистика, каждая реализция $\theta=\hat\theta(\omega)$ которой
+является точкой максимума функции $L$ правдоподобия при данной реализации $x=X(\omega)$
+
+$$\hat\theta:\omega\mapsto\sup_{\theta\in\Theta} f(X(\omega);\theta)$$
+\end{dfn}
+
+\begin{thm}{Уравнения правдоподобия}
+Если $L:\Theta\to\ab01$ дифференцируема
+и при каждой реализации $x\in\samplespace$
+супремум достигается в внутренней точке множества $\Theta$,
+то $$\frac{\partial f}{\partial\theta}(x;\theta) = 0$$
+или, то же самое: $$\frac{\partial\ln f}{\partial\theta}(x;\theta) = 0$$
+$$\frac{\partial\ln f}{\partial\theta_i}(x;\theta) = 0
+ \quad \forall x\in\samplespace\quad i=\overline{1,m}$$
+
+Эти уравнения называются уравнениями максимального правдоподобия,
+а значение оценки максимального правдоподобия (о.м.п.) ищется как её решение
+при заданной реализации.
+\end{thm}

@@ -1,28 +1,28 @@
-\subsection{Функция правдоподобия. Неравенство Крамера-Рао}
+\subsection{Функция правдоподобия. Неравенство {Крамера-Рао}}
 
 Зададим класс допустимых распределений r.v. $\xi:\Omega_0\to\samplespace_0\subset\RR$
-функцией $$f: \RR\times\Theta\to\ab01$$
+функцией двух переменных $$f: \RR\times\Theta\to\ab01$$
 при каждом фиксированном $\theta$ являющейся
 плотностью распределения вероятностей $f_\theta: \RR\to\ab01$
 соответствующего значению $\theta$ параметра
 
 Пусть $X = (X_1, \dotsc, X_n)$ --- выборка из $\pop(\xi)$,
 $x = X(\omega)$ --- реализация выборки.
-Функцией $f:\samplespace\times\Theta\to\ab01$
+Функцией $f_s:\samplespace\times\Theta\to\ab01$
 будем обозначать плотность распределения вероятностей выборки
-$f(x; \theta) = \prod_{j=1}^n f(x_j; \theta)$
+$f_s(x; \theta) = \prod_{j=1}^n f(x_j; \theta)$
 
 \begin{dfn}{Функция правдоподобия (likelihood fuction)}
 При фиксированном $x\in\samplespace$
-функция $L: \theta\mapsto f(x;\theta)$ называется функцией правдоподобия.
+функция $L: \theta\mapsto f_s(x;\theta)$ называется функцией правдоподобия.
 
 Далее будем считать,
 что при любом $x$
-отображение $f$ дифференцируемо по $\theta$
+отображение $f_s$ дифференцируемо по $\theta$ ($\iff f$ дифференцируемо по $\theta$)
 \end{dfn}
 
 \begin{dfn}{Вклад (score) выборки}
-Пусть $$u = \frac{\partial\ln f}{\partial\theta}:\samplespace\times\Theta\to\RR$$
+Пусть $$u = \frac{\partial\ln f_s}{\partial\theta}:\samplespace\times\Theta\to\RR$$
 --- частная производная функции логарифма правдоподобия.
 Вкладом выборки $X$
 называется случайная функция%
@@ -51,7 +51,7 @@ $$U(\theta)(\omega) = u(X(\omega);\theta) = u(x;\theta)$$
 \end{dfn}
 
 \begin{thm}{Свойства функции правдоподобия и вклада}
-$$\E_\theta L(\theta) = \int_\samplespace f(x;\theta) \dx = 1 \quad\forall\theta\in\Theta$$
+$$\E_\theta L(\theta) = \int_\samplespace f_s(x;\theta) \dx = 1 \quad\forall\theta\in\Theta$$
 $$\E_\theta U(\theta) = 0 \quad\forall\theta\in\Theta$$
 \end{thm}
 \begin{proof}
@@ -59,10 +59,10 @@ $$\E_\theta U(\theta) = 0 \quad\forall\theta\in\Theta$$
 
 $$\begin{aligned}
 \E_\theta U(\theta)
-&= \int_\samplespace \frac{\partial\ln f}{\partial\theta}(x;\theta) f(x;\theta)\dx
- = \int_\samplespace \frac{\partial f}{\partial\theta}(x;\theta) \frac1{f(x;\theta)} f(x;\theta)\dx=\\
-&= \int_\samplespace \frac{\partial f}{\partial\theta}(x;\theta)\dx
- = \frac{\partial}{\partial\theta} \int_\samplespace f(x;\theta)\dx
+&= \int_\samplespace \frac{\partial\ln f_s}{\partial\theta}(x;\theta) f_s(x;\theta)\dx
+ = \int_\samplespace \frac{\partial f_s}{\partial\theta}(x;\theta) \frac1{f_s(x;\theta)} f_s(x;\theta)\dx=\\
+&= \int_\samplespace \frac{\partial f_s}{\partial\theta}(x;\theta)\dx
+ = \frac{\partial}{\partial\theta} \int_\samplespace f_s(x;\theta)\dx
  = \frac{\partial}{\partial\theta} 1
  = 0
 \end{aligned}$$
@@ -73,7 +73,7 @@ $$\begin{aligned}
 о параметре $\theta$
 содержащейся в выборке $X$
 называется функция $\fisherinfo:\Theta\to\RR_+$ (или её значение):
-$$\fisherinfo(\theta) = \D U(\theta) = \E U^2(\theta)$$
+$$\fisherinfo(\theta) = \D_\theta U(\theta) = \E_\theta U^2(\theta)$$
 
 А функции $\fisherinfo_j$
 $$\fisherinfo_j(\theta)
@@ -91,16 +91,37 @@ $$\D_\theta T \geq \frac{1}{\fisherinfo(\theta)}$$
 \end{thm}
 \begin{proof}
 $T=\tau\circ X$ --- несмещённая оценка. Значит
-$$\E_\theta T = \int_\samplespace \tau(x)f(x;\theta) \dx = \theta
+$$\E_\theta T = \int_\samplespace \tau(x)f_s(x;\theta) \dx = \theta
 \qquad \left|\frac\partial{\partial\theta}\right.$$
 $$\begin{aligned}
 1
-&=\frac\partial{\partial\theta}\int_\samplespace \tau(x)f(x;\theta)\dx
- = \int_\samplespace \tau(x) \frac\partial{\partial\theta} f(x;\theta)\dx
- = \int_\samplespace \tau(x) \frac{\partial\ln f}{\partial\theta}(x;\theta)f(x;\theta)\dx \\
-&= \E_\theta(T U) = \E_\theta((T - \theta)(U-0)) + \underbrace{\theta\E_\theta U}_{=0}
- = \cov(T,U)
- \leq \sqrt{\D T \D U}
+&=\frac\partial{\partial\theta}\int_\samplespace \tau(x)f_s(x;\theta)\dx
+ = \int_\samplespace \tau(x) \frac\partial{\partial\theta} f_s(x;\theta)\dx
+ = \int_\samplespace \tau(x) \frac{\partial\ln f_s}{\partial\theta}(x;\theta)f_s(x;\theta)\dx \\
+&= \E_\theta(T U(\theta)) = \E_\theta((T - \theta)(U(\theta)-0)) + \underbrace{\theta\E_\theta U(\theta)}_{=0}
+ = \cov(T,U(\theta))
+ \leq \sqrt{\D_\theta T \D_\theta U(\theta)}
 \end{aligned}$$
-$$\D T \geq \frac{1}{\D U} = \frac{1}{\fisherinfo(\theta)}$$
+$$\D_\theta T \geq \frac{1}{\D_\theta U(\theta)} = \frac{1}{\fisherinfo(\theta)}$$
 \end{proof}
+
+Если существует оценка, для которой достигается эта нижняя граница,
+то, очевидно, эта оценка является оптимальной (и единственной)
+
+\begin{thm}
+Если нижняя граница Крамера-Рао достигается,
+то ${1 = \cov(T,U(\theta)) = \D_\theta T \D_\theta U(\theta)}$,
+i.e. $$\corr(T,U(\theta)) = \frac{\cov(T,U(\theta))}{\D_\theta T \D_\theta U(\theta)} = 1$$
+Что возможно тогда и только тогда, когда $T$ и $U$ линейно-зависимы,
+i.e. $\forall\theta\in\Theta$ существуют константы $a(\theta), b(\theta)$, такие что
+$$\pr\{T \neq a(\theta) U(\theta) + b(\theta)\} = 0$$
+
+Причём $\forall\theta\in\Theta$
+$$\D_\theta T = \D_\theta(a(\theta)U(\theta) + b(\theta))
+= \D_\theta(a(\theta) U(\theta)) = a^2(\theta) \D_\theta U(\theta) 
+= \frac{1}{\fisherinfo(\theta)}$$
+$$a(\theta) = \pm\frac{1}{\D_\theta U(\theta)}$$
+$$\theta=\E_\theta T = b(\theta)$$
+
+$$T = \frac{1}{\D_\theta U(\theta)}U(\theta) + \theta$$
+\end{thm}
