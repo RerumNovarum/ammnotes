@@ -88,7 +88,7 @@ $$\fisherinfo(\theta) = \D_\theta U(\theta) = \E_\theta U^2(\theta) = \int_\samp
 А функции $\fisherinfo_j$
 $$\fisherinfo_j(\theta)
 = \D_\theta \frac{\partial\ln f(X_j;\theta)}{\partial\theta}
-= \int_\RR \left(\frac{\partial\ln f(t;\theta)}{\partial\theta}\right)^2 f(t;\theta) \dd t $$
+= \int_\RR \left(\frac{\partial\ln f(\tau;\theta)}{\partial\theta}\right)^2 f(\tau;\theta) \dd \tau $$
 количеством информации о параметре $\theta$,
 содержащейся в $j$-м наблюдении
 
@@ -101,18 +101,18 @@ $$\fisherinfo(\theta) = \sum_{j=1}^n \fisherinfo_j(\theta) = n\fisherinfo_1(\the
 \end{dfn}
 
 \begin{thm}{Неравенство Крамера-Рао}
-Для любой несмещённой оценки $T$ параметра $\theta$ справедливо
+Для любой несмещённой оценки $T=t\circ X$ параметра $\theta$ справедливо
 $$\D_\theta T \geq \frac{1}{\fisherinfo(\theta)}$$
 \end{thm}
 \begin{proof}
-$T=\tau\circ X$ --- несмещённая оценка. Значит
-$$\E_\theta T = \int_\samplespace \tau(x)f_s(x;\theta) \dx = \theta
+$T=t\circ X$ --- несмещённая оценка. Значит
+$$\E_\theta T = \int_\samplespace t(x)f_s(x;\theta) \dx = \theta
 \qquad \left|\frac\partial{\partial\theta}\right.$$
 $$\begin{aligned}
 1
-&=\frac\partial{\partial\theta}\int_\samplespace \tau(x)f_s(x;\theta)\dx
- = \int_\samplespace \tau(x) \frac\partial{\partial\theta} f_s(x;\theta)\dx
- = \int_\samplespace \tau(x) \frac{\partial\ln f_s}{\partial\theta}(x;\theta)f_s(x;\theta)\dx \\
+&=\frac\partial{\partial\theta}\int_\samplespace t(x)f_s(x;\theta)\dx
+ = \int_\samplespace t(x) \frac\partial{\partial\theta} f_s(x;\theta)\dx
+ = \int_\samplespace t(x) \frac{\partial\ln f_s}{\partial\theta}(x;\theta)f_s(x;\theta)\dx \\
 &= \E_\theta(T U(\theta)) = \E_\theta((T - \theta)(U(\theta)-0)) + \underbrace{\theta\E_\theta U(\theta)}_{=0}
  = \cov(T,U(\theta))
  \leq \sqrt{\D_\theta T \D_\theta U(\theta)}
@@ -127,7 +127,7 @@ $$\D_\theta T \geq \frac{1}{\D_\theta U(\theta)} = \frac{1}{\fisherinfo(\theta)}
 Если нижняя граница Крамера-Рао достигается,
 то ${1 = \cov(T,U(\theta)) = \D_\theta T \D_\theta U(\theta)}$,
 i.e. $$\corr(T,U(\theta)) = \frac{\cov(T,U(\theta))}{\D_\theta T \D_\theta U(\theta)} = 1$$
-Что возможно тогда и только тогда, когда $T$ и $U$ линейно-зависимы,
+Что возможно тогда и только тогда, когда $T$ и $U(\theta)$ линейно-зависимы,
 i.e. $\forall\theta\in\Theta$ существуют константы $a(\theta), b(\theta)$, такие что
 $$\pr\{T \neq a(\theta) U(\theta) + b(\theta)\} = 0$$
 
