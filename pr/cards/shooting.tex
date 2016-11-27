@@ -77,7 +77,7 @@
     f_{(Z,Z^\star)}(z,z^\star) = f_X(z-z^\star) f_Y(z^\star)
 \]
 \[
-    f_Z(z) = \iint_{\RR^2} f_X(z - z^\star) f_Y(z^\star) \mathrm{d} z^\star
+    f_Z(z) = \iint_{\RR^2} f_X(z - z^\star) f_Y(z^\star) \left|J\right| \mathrm{d} z^\star
     = \iint_Q f_X(z - z^\star) f_Y(z^\star) \mathrm{d} z^\star
 \]
 
@@ -103,11 +103,11 @@
     f_Z(z) = \rho_{a}(z) = \int_{-0.1}^{0.1} \int_{-z_2}^{0.1} \frac{25}{6} = \frac{5}{6}(0.1 + z_2)
 \]
 \[
-    \int_{0.1}^{0.1+a}\int_{0, 0.1} \rho_a \mathrm{d}z_2 \mathrm{d} z_1 = \frac{a}{80}
+    \int_{0.1}^{0.1+a}\int_{0}^{0.1} \rho_a \mathrm{d}z_2 \mathrm{d} z_1 = \frac{a}{80}
     \]
 
 \subsection{Общая вероятность}
 \[
-    p = \frac{21}{25} + 4\frac{3}{3200} + 2\frac{2.8+1.8}{80} = 721/800 \approx 0.90125
+    p = \frac{21}{25} + 4\frac{3}{3200} + 2\frac{2.8+1.8}{80} = 767/800 \approx 0.95875
     \]
 \end{document}
