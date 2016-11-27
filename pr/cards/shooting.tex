@@ -1,0 +1,113 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{eulervm}
+
+\providecommand{\RR}{\mathbb{R}}
+
+\title{Задание 3}
+
+\begin{document}
+\section{Задача}
+В мишень, представляющую собой прямоугольник \[ \Omega = [0,3]\times [0,2] \]
+стреляют из пистолета.
+Известно, что отклонение пули от точки, на которую нацелен пистолет, произвольно,
+но не превышает \( 0.1 \) по любому из направлений,
+параллельным сторонам прямоугольника.
+Точнее, отклонение равномерно распределено в квадрате \[ Q = [0,0.1]\times [0,0.1] \]
+Стрелок целится в произвольную точку мишени (снова равномерно).
+С какой вероятностью стрелок попадёт в мишень?
+\section{Решение 1}
+\subsection{Формальная постановка}
+Даны две случайные величины:
+\( X \) -- точка прицеливания, и \( Y \) -- отклонение пули.
+Эти величины распределены равномерно:
+
+\[ X: \Omega\to\RR^2 \]
+\[ f_X(x) =
+\left\{\begin{aligned}
+    & \frac{1}{0.04} = 25 & \text{if } x\in\Omega \\
+    & 0 & \text{otherwise}
+\end{aligned}\right. \]
+Короче: \( X\in\mathrm{Uniff}(\Omega) \)
+
+\[ Y: Q\to \RR^2 \]
+\[ Y\in\mathrm{Uniff}(Q) \]
+
+Рассмотрим случайную величину
+\[ Z: \Omega\times Q \to \RR^2 \]
+\[ Z = X + Y \]
+
+Ясно, что исходную задачу можно сформулировать так:
+найти
+\[ p = \mathbb{P}\left\{ \omega; Z(\omega)\in\Omega \right\} \]
+
+
+Если \( \rho: \RR^2\to\RR \) --- плотность распределения вероятностей r.v. \( Z \), то
+\[ p = \iint_{\RR^2} \rho = \iint_\Omega \rho \]
+
+Заметим, что \( f_Z \) равна нулю вне \( \Omega \) и симметрична, поэтому
+
+\begin{align*}
+    p = \iint_\Omega \rho = &\iint_{[0.1,2.9]\times [0.1,1.9]} \rho_I  \\
+    & + 4\iint_{[0,0.1]^2} \rho_{II} \\
+    & + 2\iint_{[0.1,2.9]\times [0,0.1]} \rho_{2.8} \\
+    & + 2\iint_{[0.1,1.9]\times [0,0.1]} \rho_{1.8}
+\end{align*}
+Где \( \rho_I \) -- плотность внутреннего сегмента,
+\( \rho_{II} \) -- плотность в левом нижнем углу,
+\( \rho_{a} \) -- площадь нижнего бокового сегмента длины \( a \in \{1.7, 2.7\} \).
+
+
+Чтобы найти плотность \( \rho \) рассмотрим случайную величину \( (Z=X+Y, Z^\star = Y ) \).
+\[\left\{\begin{aligned}
+    & X = Z - Z^\star \\
+    & Y = Z^\star
+\end{aligned}\right.\]
+\[ J = \begin{vmatrix}
+    1 & -1 \\
+    0 & 1
+\end{vmatrix} = 1 \]
+
+Ясно, что
+\[
+    f_{(Z,Z^\star)}(z,z^\star) = f_X(z-z^\star) f_Y(z^\star)
+\]
+\[
+    f_Z(z) = \iint_{\RR^2} f_X(z - z^\star) f_Y(z^\star) \mathrm{d} z^\star
+    = \iint_Q f_X(z - z^\star) f_Y(z^\star) \mathrm{d} z^\star
+\]
+
+\subsection{Внутренность}
+Рассмотрим отдельно \( z\in [0.1, 2.8]\times [0.1, 1.8] \).
+В этой области \( z - z^\star \in \Omega \) и
+\[
+    f_Z(z) = \rho_I(z) = \iint_Q \frac{25}{6} = 1/6
+\]
+\[ \iint \rho_I = \frac{2.8\cdot 1.8}{6} = \frac{21}{25} \]
+
+\subsection{Углы}
+Рассмотрим \( z\in [0, 0.1]^2 \), \( z-z^\star \in [-0.1,0.2]^2 \)
+\[
+    f_Z(z) = \rho_{II}(z) = \int_{-z_1}^{0.1} \int_{-z_2}^{0.1} \frac{25}{6} = \frac{25}{6}(0.1+z_1)(0.1+z_2)
+\]
+\[
+    \iint_{[0,0.1]^2} \rho_{II} = \frac{3}{3200}
+    \]
+\subsection{Боковые сегменты}
+Пусть \( z\in [0.1, a]\times [0, 0.1] \)
+\[
+    f_Z(z) = \rho_{a}(z) = \int_{-0.1}^{0.1} \int_{-z_2}^{0.1} \frac{25}{6} = \frac{5}{6}(0.1 + z_2)
+\]
+\[
+    \int_{0.1}^{0.1+a}\int_{0, 0.1} \rho_a \mathrm{d}z_2 \mathrm{d} z_1 = \frac{a}{80}
+    \]
+
+\subsection{Общая вероятность}
+\[
+    p = \frac{21}{25} + 4\frac{3}{3200} + 2\frac{2.8+1.8}{80} = 721/800 \approx 0.90125
+    \]
+\end{document}
